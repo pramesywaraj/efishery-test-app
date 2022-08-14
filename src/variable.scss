@@ -1,0 +1,33 @@
+$primary-black: #1d1d1d;
+$primary-color: #038767;
+$secondary-color: #70d2b4;
+$white: #fff;
+$light-background: #f8f9fa;
+
+@mixin response-to-size($size) {
+  @if $size == phone-small {
+    @media (max-width: 399px) {
+      @content;
+    }
+  } @else if $size == phone {
+    @media (min-width: 400px) and (max-width: 599px) {
+      @content;
+    }
+  } @else if $size == tablet-potrait {
+    @media (min-width: 600px) and (max-width: 899px) {
+      @content;
+    }
+  } @else if $size == tablet-landscape {
+    @media (min-width: 900px) and (max-width: 1199px) {
+      @content;
+    }
+  } @else if $size == desktop {
+    @media (min-width: 1200px) and (max-width: 1799px) {
+      @content;
+    }
+  } @else if $size == large-desktop {
+    @media (min-width: 1800px) {
+      @content;
+    }
+  }
+}
