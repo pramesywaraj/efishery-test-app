@@ -1,4 +1,5 @@
 @import './variable.scss';
+@import './fonts-config.scss';
 
 /*
   CSS Reset, credits to https://www.joshwcomeau.com/css/custom-css-reset/
@@ -16,7 +17,7 @@
 
 html {
   font-size: 14px;
-  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+  font-family: 'NunitoSans-Regular', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
