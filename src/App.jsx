@@ -1,10 +1,16 @@
-import style from '@/App.module.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import HomePage from '@pages/HomePage';
+import InputPage from '@pages/InputPage';
 
 function App() {
   return (
-    <div className={style.testing}>
-      <h1>EFishery Test App</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/input-item" element={<InputPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
