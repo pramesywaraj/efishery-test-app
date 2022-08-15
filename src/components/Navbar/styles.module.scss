@@ -3,10 +3,13 @@
 .navigation-container {
   @include var.display-flex();
 
-  padding: 16px;
+  padding: 12px 16px;
   width: 100%;
+  align-items: center;
 
-  justify-content: space-between;
+  box-shadow: 0px 8px 12px 0px rgba(107,107,107,0.125);
+  -webkit-box-shadow: 0px 8px 12px 0px rgba(107,107,107,0.125);
+  -moz-box-shadow: 0px 8px 12px 0px rgba(107,107,107,0.125);
 }
 
 .navigation-logo-wrapper {
@@ -41,7 +44,7 @@
     color: var.$primary-black;
     font-size: 1.1rem;
     font-family: var.$font-semi-bold;
-  
+
     &:not(:last-child) {
       margin-right: 1rem;
     }
@@ -53,7 +56,12 @@
 }
 
 @include var.response-to-size(tablet-landscape) {
+  .navigation-container {
+    padding: 16px 32px;
+  }
+
   .navigation-links-wrapper {
     @include var.display-flex();
+    margin-left: 32px;
   }
 }

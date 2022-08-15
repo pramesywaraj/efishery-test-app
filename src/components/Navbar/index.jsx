@@ -15,11 +15,15 @@ const Navbar = () => {
         <Link to="/">eFishery Test App</Link>
       </div>
       <div className={styles['navigation-links-wrapper']}>
-        <NavLink to="/" className={checkIfRouteActive}>Daftar Produk</NavLink>
-        <NavLink to="input-item" className={checkIfRouteActive}>Tambah Produk</NavLink>
+        <NavLink to="/" className={checkIfRouteActive}>
+          Daftar Produk
+        </NavLink>
+        {/* <NavLink to="input-item" className={checkIfRouteActive}>
+          Tambah Produk
+        </NavLink> */}
       </div>
     </nav>
-  )
-}
+  );
+};
 
 export default Navbar;
