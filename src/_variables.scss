@@ -50,3 +50,8 @@ $font-semi-bold: 'NunitoSans-SemiBold';
 @mixin display-none() {
   display: none;
 }
+
+@mixin default-layout($width) {
+  margin: 0 auto;
+  max-width: $width;
+}
