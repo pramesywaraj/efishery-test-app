@@ -9,6 +9,10 @@ $font-size-regular: 1rem;
 $font-size-large: 1.25rem;
 $font-size-heading: 2rem;
 
+$font-regular: 'NunitoSans-Regular';
+$font-bold: 'NunitoSans-Bold';
+$font-semi-bold: 'NunitoSans-SemiBold';
+
 @mixin response-to-size($size) {
   @if $size == phone-small {
     @media (max-width: 399px) {
