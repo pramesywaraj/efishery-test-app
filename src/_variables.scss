@@ -19,19 +19,19 @@ $font-semi-bold: 'NunitoSans-SemiBold';
       @content;
     }
   } @else if $size == phone {
-    @media (min-width: 400px) and (max-width: 599px) {
+    @media (min-width: 400px) {
       @content;
     }
   } @else if $size == tablet-potrait {
-    @media (min-width: 600px) and (max-width: 899px) {
+    @media (min-width: 600px) {
       @content;
     }
   } @else if $size == tablet-landscape {
-    @media (min-width: 900px) and (max-width: 1199px) {
+    @media (min-width: 900px) {
       @content;
     }
   } @else if $size == desktop {
-    @media (min-width: 1200px) and (max-width: 1799px) {
+    @media (min-width: 1200px) {
       @content;
     }
   } @else if $size == large-desktop {
@@ -39,4 +39,14 @@ $font-semi-bold: 'NunitoSans-SemiBold';
       @content;
     }
   }
+}
+
+// Custom styling classes, most used styles
+@mixin display-flex($layout: row) {
+  display: flex;
+  flex-direction: $layout;
+}
+
+@mixin display-none() {
+  display: none;
 }
