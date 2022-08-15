@@ -1,0 +1,41 @@
+@use '@/_variables.scss' as var;
+
+.homepage-main {
+  padding: 16px;
+  width: 100%;
+}
+
+.homepage-header {
+  @include var.display-flex();
+  
+  align-items: center;
+}
+
+.homepage-section-container {
+  @include var.display-flex(flex);
+  margin-top: 1rem;
+}
+
+@include var.response-to-size(tablet-potrait) {
+  .homepage-main {
+    @include var.default-layout(960px);
+  }
+}
+
+@include var.response-to-size(tablet-landscape) {
+  .homepage-main {
+    @include var.default-layout(960px);
+  }
+}
+
+@include var.response-to-size(desktop) {
+  .homepage-main {
+    @include var.default-layout(1190px);
+  }
+}
+
+@include var.response-to-size(large-desktop) {
+  .homepage-main {
+    @include var.default-layout(1240px);
+  }
+}

@@ -1,0 +1,11 @@
+@use '@/_variables.scss' as var;
+
+.homepage-filter-section {
+  display: none;
+}
+
+@include var.response-to-size(desktop) {
+  .homepage-filter-section {
+    @include var.display-flex(column);
+  }
+}
