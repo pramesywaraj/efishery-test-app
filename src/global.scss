@@ -85,7 +85,17 @@ button {
   -webkit-appearance: none;
   -moz-appearance: none;
 
+  transition: 0.4s all;
+
   :focus {
     outline: none;
-  }  
+  }
+
+  :hover {
+    opacity: 0.8;
+  }
+
+  :active {
+    transform: scale(0.91);
+  }
 }
