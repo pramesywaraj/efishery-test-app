@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { TextInput } from '@components/Inputs';
 import { IconButton } from '@components/Buttons';
 
@@ -6,6 +8,21 @@ import { ReactComponent as IconSearch } from '@assets/images/icons/icon-search.s
 import styles from './styles.module.scss';
 
 const Search = ({ onChange, onSubmit, searchTerm }) => {
+  useEffect(() => {
+    const keyDownListener = event => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        onSubmit();
+      }
+    }
+   
+    document.addEventListener('keydown', keyDownListener);
+
+    return () => {
+      document.removeEventListener('keydown', keyDownListener);
+    }
+  }, []);
+
   return (
     <div className={styles['search-container']}>
       <TextInput
