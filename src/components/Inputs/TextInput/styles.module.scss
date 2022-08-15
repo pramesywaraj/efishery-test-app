@@ -1,0 +1,26 @@
+@use '@/_variables.scss' as var;
+
+.text-input-container {
+  @include var.display-flex(column);
+  column-gap: 8px;
+
+  width: 100%;
+
+  .text-input-label {
+    font-size: 1rem;
+    font-family: var.$font-regular;
+  }
+
+  .text-input-area {
+    border: 1px solid #c7c7c7;
+    border-radius: 8px;
+    min-height: 32px;
+    padding: 8px;
+
+    width: auto;
+
+    outline: none;
+
+    transition: border 0.5s ease;
+  }
+}
