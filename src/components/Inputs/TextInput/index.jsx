@@ -1,3 +1,4 @@
+import { checkClassName } from '@helpers/style';
 import styles from './styles.module.scss';
 
 const TextInput = ({
@@ -12,17 +13,12 @@ const TextInput = ({
   value,
   onChange,
 }) => {
-  let containerClasses = styles['text-input-container'];
-  if (containerClassName) containerClasses = containerClasses.concat(' ', containerClassName.toString());
-  
-  let labelClasses = styles['text-input-label'];
-  if (labelClassName) labelClasses = labelClasses.concat(' ', labelClassName.toString());
-  
-  let inputClasses = styles['text-input-area'];
-  if (inputClassName) inputClasses = inputClasses.concat(' ', inputClassName.toString());
+  const containerClasses = checkClassName(styles['text-input-container'], containerClassName);  
+  const labelClasses = checkClassName(styles['text-input-label'], labelClassName);
+  const inputClasses = checkClassName(styles['text-input-area'], inputClassName);  
 
   return (
-    <div className={styles['text-input-container']}>
+    <div className={containerClasses}>
       {label && (
         <label className={labelClasses} htmlFor={name}>
           {label}
