@@ -1,0 +1,21 @@
+@use '@/_variables.scss' as var;
+
+.search-container {
+  @include var.display-flex(row);
+
+  align-items: center;
+  column-gap: 8px;
+
+  .search-input-container {
+    flex: 1;
+  }
+
+  .search-submit-button {
+    font-size: 1.75rem;
+    background-color: var.$primary-color;
+  }
+
+  .search-submit-button-icon {
+    fill: white;
+  }
+}
