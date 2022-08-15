@@ -7,7 +7,7 @@ const ScreenLayout = () => {
       <Navbar />
       <Outlet />
     </>
-  )
-}
+  );
+};
 
 export default ScreenLayout;
