@@ -19,7 +19,8 @@ export default defineConfig({
       '@components': path.resolve(__dirname, './src/components'),
       '@layouts': path.resolve(__dirname, './src/layouts'),
       '@helpers': path.resolve(__dirname, './src/helpers'),
-      '@constants': path.resolve(__dirname, './src/constants')
+      '@constants': path.resolve(__dirname, './src/constants'),
+      '@hooks': path.resolve(__dirname, './src/hooks')
     }
   }
 });
