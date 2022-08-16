@@ -56,3 +56,13 @@ $font-semi-bold: 'NunitoSans-SemiBold';
   margin: 0 auto;
   max-width: $width;
 }
+
+@mixin default-svg-size() {
+  width: 1em !important;
+  height: 1em !important;
+  font-size: inherit;
+}
+
+@mixin apply-svg-color($color) {
+  fill: $color !important;
+}
