@@ -14,7 +14,7 @@ import styles from './styles.module.scss';
 
 const DUMMY_LOADING_ARRAY = [1, 2, 3, 4, 5, 6, 7, 8];
 
-const ItemListSection = ({ isLoading, products, onSearchByTitle }) => {
+const ItemListSection = ({ isLoading, products, onSearchByTitle, filter }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [itemsLayout, setItemsLayout] = useState(PRODUCT_ITEMS_LAYOUT_GRID);
 
@@ -50,6 +50,7 @@ const ItemListSection = ({ isLoading, products, onSearchByTitle }) => {
         <p className={styles['text-result']}>{`Menampilkan ${products.length} hasil`}</p>
         <LayoutSwitch onChangeLayout={onChangeLayout} renderedLayout={itemsLayout} />
       </div>
+      {filter}
       <div
         className={`${styles['itemlist-container']} ${
           itemsLayout === PRODUCT_ITEMS_LAYOUT_GRID ? styles['grid-view'] : styles['list-view']
