@@ -11,7 +11,8 @@ const TextInput = ({
   placeholder,
   type,
   value,
-  onChange
+  onChange,
+  onKeyDown
 }) => {
   const containerClasses = checkClassName(styles['text-input-container'], containerClassName);
   const labelClasses = checkClassName(styles['text-input-label'], labelClassName);
@@ -33,6 +34,7 @@ const TextInput = ({
         placeholder={placeholder}
         value={value}
         onChange={e => onChange(e)}
+        onKeyDown={e => onKeyDown(e)}
       />
     </div>
   );
