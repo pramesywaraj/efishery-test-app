@@ -7,5 +7,15 @@
 @include var.response-to-size(desktop) {
   .homepage-filter-section {
     @include var.display-flex(column);
+    
+    row-gap: 16px;
+  }
+
+  .homepage-filter-card {
+    min-width: 300px;
+    background-color: var.$light-background;
+    border: 1px solid var.$gray;
+    padding: 16px;
+    border-radius: 8px;
   }
 }
