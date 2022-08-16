@@ -1,3 +1,4 @@
 import IconButton from './IconButton';
+import FloatingButton from './FloatingButton';
 
-export { IconButton };
+export { IconButton, FloatingButton };
