@@ -1,0 +1,2 @@
+export const PRODUCT_ITEMS_LAYOUT_GRID = 'GRID';
+export const PRODUCT_ITEMS_LAYOUT_LIST = 'LIST';
