@@ -1,0 +1,30 @@
+@use '@/_variables.scss' as var;
+
+.inputpage-main {
+  padding: 16px;
+  width: 100%;
+}
+
+@include var.response-to-size(tablet-potrait) {
+  .inputpage-main {
+    @include var.default-layout(960px);
+  }
+}
+
+@include var.response-to-size(tablet-landscape) {
+  .inputpage-main {
+    @include var.default-layout(960px);
+  }
+}
+
+@include var.response-to-size(desktop) {
+  .inputpage-main {
+    @include var.default-layout(1190px);
+  }
+}
+
+@include var.response-to-size(large-desktop) {
+  .inputpage-main {
+    @include var.default-layout(1240px);
+  }
+}
