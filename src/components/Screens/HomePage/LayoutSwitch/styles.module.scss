@@ -1,0 +1,28 @@
+@use '@/_variables.scss' as var;
+
+.itemlist-subheader-switch {
+  @include var.display-flex(row);
+  column-gap: 8px;
+
+  .itemlist-switch-button {
+    border: 1px solid var.$primary-color;
+    font-size: 1rem;
+    background-color: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & path {
+      fill: var.$primary-color !important;
+    }
+
+    &.active {
+      background-color: var.$primary-color;
+
+      & path {
+        fill: var.$white !important;
+      }
+    }
+  }
+}
