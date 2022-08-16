@@ -17,7 +17,7 @@ import styles from './styles.module.scss';
 const DUMMY_LOADING_ARRAY = [1, 2, 3, 4, 5, 6, 7, 8];
 
 const ItemListSection = () => {
-  const { isLoading, data } = useDataHandler('/list');
+  const { isLoading, data, onSearchByTitle } = useDataHandler('/list');
 
   const [searchTerm, setSearchTerm] = useState('');
   const [itemsLayout, setItemsLayout] = useState(PRODUCT_ITEMS_LAYOUT_GRID);
@@ -32,8 +32,12 @@ const ItemListSection = () => {
   };
 
   const onSubmitSearch = () => {
-    // handle search here based on search term
+    onSearchByTitle(searchTerm);
   };
+  
+  const onResetSearch = () => {
+    onSearchByTitle('');
+  }
 
   const onChangeLayout = selectedLayout => {
     setItemsLayout(selectedLayout);
@@ -45,7 +49,7 @@ const ItemListSection = () => {
 
   return (
     <section className={styles['itemlist-section']}>
-      <Search onChange={onChangeSearchText} searchTerm={searchTerm} onSubmit={onSubmitSearch} />
+      <Search onChange={onChangeSearchText} searchTerm={searchTerm} onSubmit={() => onSubmitSearch()} onReset={onResetSearch} />
       <div className={styles['itemlist-subheader-container']}>
         <p className={styles['text-result']}>{`Menampilkan ${data.length} hasil`}</p>
         <LayoutSwitch onChangeLayout={onChangeLayout} renderedLayout={itemsLayout} />

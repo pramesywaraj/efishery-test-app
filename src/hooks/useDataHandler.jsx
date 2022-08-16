@@ -5,7 +5,9 @@ const url = import.meta.env.VITE_API_ENDPOINT;
 const useDataHandler = endpoint => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
-  const [data, setData] = useState([]);
+  const [isSearching, setIsSearching] = useState(false);
+  const [baseData, setBaseData] = useState([]);
+  const [searchedData, setSearchedData] = useState([]);
 
   const fetchingData = async () => {
     setIsLoading(true);
@@ -23,7 +25,7 @@ const useDataHandler = endpoint => {
       const tempData = await response.json();
       const filterEmptyData = tempData.filter((item) => item.uuid);
 
-      setData(filterEmptyData);
+      setBaseData(filterEmptyData);
     } catch (e) {
       console.error('There is something wrong when fetching the data', e);
       setIsError(true);
@@ -35,8 +37,23 @@ const useDataHandler = endpoint => {
   useEffect(() => {
     fetchingData();
   }, []);
+  
+  const onSearchByTitle = (term = '') => {
+    if (term.length === 0) {
+      setIsSearching(false);
+      setSearchedData([]);
+      return;
+    }
 
-  return { isLoading, isError, data };
+    const formatTerm = term.toUpperCase();
+
+    const cloneBaseData = [...baseData];
+    const filterBySearchTerm = cloneBaseData.filter((item) => `${item?.komoditas}`.includes(formatTerm));
+    setIsSearching(true);
+    setSearchedData(filterBySearchTerm);
+  };
+
+  return { isLoading, isError, isSearching, data: isSearching ? searchedData : baseData, onSearchByTitle };
 };
 
 export default useDataHandler;
