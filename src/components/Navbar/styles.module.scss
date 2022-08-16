@@ -14,6 +14,7 @@
 
 .navigation-logo-wrapper {
   align-items: center;
+  flex: 1;
 
   @include var.display-flex();
 

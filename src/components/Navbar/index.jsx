@@ -18,9 +18,9 @@ const Navbar = () => {
         <NavLink to="/" className={checkIfRouteActive}>
           Daftar Produk
         </NavLink>
-        {/* <NavLink to="input-item" className={checkIfRouteActive}>
+        <NavLink to="input-item" className={checkIfRouteActive}>
           Tambah Produk
-        </NavLink> */}
+        </NavLink>
       </div>
     </nav>
   );
