@@ -53,3 +53,27 @@
     row-gap: 8px;
   }
 }
+
+@include var.response-to-size(tablet-potrait) {
+  .itemlist-container {
+    &.grid-view {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@include var.response-to-size(tablet-landscape) {
+  .itemlist-container {
+    &.grid-view {
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 8px;
+      row-gap: 12px;
+    }
+  }
+}
+
+@include var.response-to-size(desktop) {
+  .floating-add-button {
+    display: none;
+  }
+}
