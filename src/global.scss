@@ -40,7 +40,7 @@ body {
 }
 
 main {
-  display: block;
+  flex: 1;
 }
 
 img,
@@ -75,6 +75,11 @@ p {
 
 #root {
   isolation: isolate;
+  
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
 }
 
 button {
