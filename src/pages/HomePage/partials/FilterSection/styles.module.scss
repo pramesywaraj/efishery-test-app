@@ -1,7 +1,7 @@
 @use '@/_variables.scss' as var;
 
 .homepage-filter-section {
-  display: none;
+  row-gap: 16px;
 }
 
 @include var.response-to-size(desktop) {
@@ -17,5 +17,16 @@
     border: 1px solid var.$gray;
     padding: 16px;
     border-radius: 8px;
+
+    .form-group {
+      display: flex;
+      flex-direction: row;
+
+      width: 100%;
+
+      &label {
+        width: 100% !important;
+      }
+    }
   }
 }
