@@ -21,8 +21,9 @@ const useFetch = endpoint => {
       if (!response || response.status !== 200 || !response.ok) throw new Error('Something Wrong');
 
       const tempData = await response.json();
+      const filterEmptyData = tempData.filter((item) => item.uuid);
 
-      setData(tempData);
+      setData(filterEmptyData);
     } catch (e) {
       console.error('There is something wrong when fetching the data', e);
       setIsError(true);
