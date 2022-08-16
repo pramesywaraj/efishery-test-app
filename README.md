@@ -1,5 +1,3 @@
-###How to install the app
-
 ## How to Install
 
     npm install
