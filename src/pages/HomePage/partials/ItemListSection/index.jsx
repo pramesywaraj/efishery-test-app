@@ -13,9 +13,13 @@ const ItemListSection = () => {
     setSearchTerm(value);
   };
   
+  const onSubmitSearch = () => {
+    // handle search here based on search term
+  };
+  
   return (
     <section className={styles['itemlist-section']}>
-      <Search onChange={onChangeSearchText} searchTerm={searchTerm} />
+      <Search onChange={onChangeSearchText} searchTerm={searchTerm} onSubmit={onSubmitSearch} />
       <div>
         {searchTerm}
       </div>
