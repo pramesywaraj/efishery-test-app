@@ -7,21 +7,14 @@ import { ReactComponent as IconSearch } from '@assets/images/icons/icon-search.s
 
 import styles from './styles.module.scss';
 
-const Search = ({ onChange, onSubmit, searchTerm }) => {
+const Search = ({ onChange, onSubmit, onReset, searchTerm }) => {  
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') onSubmit();
+  };
+
   useEffect(() => {
-    const keyDownListener = event => {
-      if (event.key === 'Enter') {
-        event.preventDefault();
-        onSubmit();
-      }
-    };
-
-    document.addEventListener('keydown', keyDownListener);
-
-    return () => {
-      document.removeEventListener('keydown', keyDownListener);
-    };
-  }, []);
+    if (searchTerm.length === 0) onReset();
+  }, [searchTerm])
 
   return (
     <div className={styles['search-container']}>
@@ -29,6 +22,7 @@ const Search = ({ onChange, onSubmit, searchTerm }) => {
         name="search"
         placeholder="Cari produk disini..."
         onChange={onChange}
+        onKeyDown={handleKeyDown}
         value={searchTerm}
         containerClassName={styles['search-input-container']}
       />
