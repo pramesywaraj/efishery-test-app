@@ -18,7 +18,8 @@ export default defineConfig({
       '@assets': path.resolve(__dirname, './src/assets'),
       '@components': path.resolve(__dirname, './src/components'),
       '@layouts': path.resolve(__dirname, './src/layouts'),
-      '@helpers': path.resolve(__dirname, './src/helpers')
+      '@helpers': path.resolve(__dirname, './src/helpers'),
+      '@constants': path.resolve(__dirname, './src/constants')
     }
   }
 });
