@@ -69,6 +69,10 @@ h6 {
   overflow-wrap: break-word;
 }
 
+p {
+  margin: 0px !important;
+}
+
 #root {
   isolation: isolate;
 }
