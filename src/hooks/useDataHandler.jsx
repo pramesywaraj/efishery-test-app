@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 const url = import.meta.env.VITE_API_ENDPOINT;
 
-const useFetch = endpoint => {
+const useDataHandler = endpoint => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [data, setData] = useState([]);
@@ -39,4 +39,4 @@ const useFetch = endpoint => {
   return { isLoading, isError, data };
 };
 
-export default useFetch;
+export default useDataHandler;

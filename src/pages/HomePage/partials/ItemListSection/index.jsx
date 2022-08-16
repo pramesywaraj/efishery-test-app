@@ -7,7 +7,7 @@ import LayoutSwitch from '@components/Screens/HomePage/LayoutSwitch';
 import { FloatingButton } from '@components/Buttons';
 import { LoadingPlaceholder } from '@components/Loaders';
 
-import useFetch from '@hooks/useFetch';
+import useDataHandler from '@/hooks/useDataHandler';
 
 import { PRODUCT_ITEMS_LAYOUT_GRID } from '@constants/product';
 import { ReactComponent as IconAdd } from '@assets/images/icons/icon-add.svg';
@@ -17,9 +17,10 @@ import styles from './styles.module.scss';
 const DUMMY_LOADING_ARRAY = [1, 2, 3, 4, 5, 6, 7, 8];
 
 const ItemListSection = () => {
+  const { isLoading, data } = useDataHandler('/list');
+
   const [searchTerm, setSearchTerm] = useState('');
   const [itemsLayout, setItemsLayout] = useState(PRODUCT_ITEMS_LAYOUT_GRID);
-  const { isLoading, data } = useFetch('/list');
 
   const navigation = useNavigate();
 
