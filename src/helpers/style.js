@@ -5,3 +5,11 @@ export const checkClassName = (defaultClassName, additionalClassName) => {
 
   return tempClasses;
 };
+
+export const formatStringToPascal = (string = '') => {
+  return string.toLowerCase().replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
+};
+
+export const formatCurrency = (string = '') => {
+  return new Intl.NumberFormat('id-ID', { compactDisplay: 'short' }).format(string);
+};
