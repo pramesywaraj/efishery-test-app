@@ -46,7 +46,7 @@ const ItemListSection = () => {
     <section className={styles['itemlist-section']}>
       <Search onChange={onChangeSearchText} searchTerm={searchTerm} onSubmit={onSubmitSearch} />
       <div className={styles['itemlist-subheader-container']}>
-        <p className={styles['text-result']}>Menampilkan 300 hasil</p>
+        <p className={styles['text-result']}>{`Menampilkan ${data.length} hasil`}</p>
         <LayoutSwitch onChangeLayout={onChangeLayout} renderedLayout={itemsLayout} />
       </div>
       <div
@@ -64,7 +64,15 @@ const ItemListSection = () => {
                 />
               </div>
             );
-          return <GridProductItem />;
+          return (
+            <GridProductItem
+              name={item.komoditas}
+              city={item.area_kota}
+              province={item.area_provinsi}
+              price={item.price}
+              size={item.size}
+            />
+          );
         })}
       </div>
 
