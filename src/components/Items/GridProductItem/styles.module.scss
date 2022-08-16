@@ -1,0 +1,41 @@
+@use '@/_variables.scss' as var;
+
+.item-product_grid-container {
+  width: 100%;
+  padding: 8px;
+  border: 1.5px solid var.$light-background;
+
+  .item-product-title {
+    font-family: var.$font-bold;
+    color: var.$primary-black;
+
+    margin-bottom: 4px;
+  }
+
+  .item-product_detail-section {
+    @include var.display-flex(row);
+    align-items: center;
+
+    margin-top: 8px;
+    column-gap: 4px;
+
+    .item-icon {
+      height: 1em;
+      width: 1em;
+
+      & path {
+        fill: var.$secondary-color !important;
+      }
+    }
+
+    .item-detail-text {
+      color: var.$gray;
+      font-size: 0.8rem;
+    }
+
+    .item-rp-text {
+      font-size: 0.9em;
+      color: var.$secondary-color;
+    }
+  }
+}
