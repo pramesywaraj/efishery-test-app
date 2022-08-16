@@ -12,14 +12,18 @@ const LayoutSwitch = ({ onChangeLayout, renderedLayout }) => {
       <IconButton
         onClick={() => onChangeLayout(PRODUCT_ITEMS_LAYOUT_GRID)}
         alt="Grid"
-        className={`${styles['itemlist-switch-button']} ${renderedLayout === PRODUCT_ITEMS_LAYOUT_GRID && styles['active']}`}
+        className={`${styles['itemlist-switch-button']} ${
+          renderedLayout === PRODUCT_ITEMS_LAYOUT_GRID && styles['active']
+        }`}
         iconClassName={styles['icon']}
         Icon={IconGrid}
       />
       <IconButton
         onClick={() => onChangeLayout(PRODUCT_ITEMS_LAYOUT_LIST)}
         alt="List"
-        className={`${styles['itemlist-switch-button']} ${renderedLayout === PRODUCT_ITEMS_LAYOUT_LIST && styles['active']}`}
+        className={`${styles['itemlist-switch-button']} ${
+          renderedLayout === PRODUCT_ITEMS_LAYOUT_LIST && styles['active']
+        }`}
         iconClassName={styles['icon']}
         Icon={IconList}
       />

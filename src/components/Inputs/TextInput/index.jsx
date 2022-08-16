@@ -11,11 +11,11 @@ const TextInput = ({
   placeholder,
   type,
   value,
-  onChange,
+  onChange
 }) => {
-  const containerClasses = checkClassName(styles['text-input-container'], containerClassName);  
+  const containerClasses = checkClassName(styles['text-input-container'], containerClassName);
   const labelClasses = checkClassName(styles['text-input-label'], labelClassName);
-  const inputClasses = checkClassName(styles['text-input-area'], inputClassName);  
+  const inputClasses = checkClassName(styles['text-input-area'], inputClassName);
 
   return (
     <div className={containerClasses}>
@@ -36,6 +36,6 @@ const TextInput = ({
       />
     </div>
   );
-}
+};
 
 export default TextInput;

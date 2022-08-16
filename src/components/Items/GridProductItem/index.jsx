@@ -10,11 +10,11 @@ const GridProductItem = () => {
     <CardBase className={styles['item-product_grid-container']}>
       <p className={styles['item-product-title']}>Bawal Ikan Kakap Asik SeIndonesia</p>
       <div className={styles['item-product_detail-section']}>
-        <IconLocation className={styles['item-icon']}/>
+        <IconLocation className={styles['item-icon']} />
         <p className={styles['item-detail-text']}>Ambarawa</p>
       </div>
       <div className={styles['item-product_detail-section']}>
-        <IconWeight className={styles['item-icon']}/>
+        <IconWeight className={styles['item-icon']} />
         <p className={styles['item-detail-text']}>250 Kg tersedia</p>
       </div>
       <div className={styles['item-product_detail-section']}>
@@ -22,7 +22,7 @@ const GridProductItem = () => {
         <p className={styles['item-detail-text']}>25000/kg</p>
       </div>
     </CardBase>
-  )
-}
+  );
+};
 
 export default GridProductItem;

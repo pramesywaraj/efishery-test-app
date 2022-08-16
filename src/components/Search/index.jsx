@@ -14,13 +14,13 @@ const Search = ({ onChange, onSubmit, searchTerm }) => {
         event.preventDefault();
         onSubmit();
       }
-    }
-   
+    };
+
     document.addEventListener('keydown', keyDownListener);
 
     return () => {
       document.removeEventListener('keydown', keyDownListener);
-    }
+    };
   }, []);
 
   return (

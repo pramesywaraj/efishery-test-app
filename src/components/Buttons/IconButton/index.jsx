@@ -5,10 +5,7 @@ const IconButton = ({ onClick, className, iconClassName, Icon }) => {
   const buttonClasses = checkClassName(styles['icon-btn'], className);
   const iconClasses = checkClassName(styles['icon-image'], iconClassName);
   return (
-    <button
-      className={buttonClasses}
-      onClick={onClick}
-    >
+    <button className={buttonClasses} onClick={onClick}>
       <Icon className={iconClasses} />
     </button>
   );

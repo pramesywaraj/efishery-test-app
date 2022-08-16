@@ -20,28 +20,28 @@ const ItemListSection = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [itemsLayout, setItemsLayout] = useState(PRODUCT_ITEMS_LAYOUT_GRID);
   const { isLoading, data } = useFetch('/list');
-  
+
   const navigation = useNavigate();
-  
-  const onChangeSearchText = (event) => {
+
+  const onChangeSearchText = event => {
     const { value } = event.target;
     event.preventDefault();
 
     setSearchTerm(value);
   };
-  
+
   const onSubmitSearch = () => {
     // handle search here based on search term
   };
-  
-  const onChangeLayout = (selectedLayout) => {
+
+  const onChangeLayout = selectedLayout => {
     setItemsLayout(selectedLayout);
   };
-  
+
   const redirectToInputPage = () => {
     navigation('/input-item');
   };
-  
+
   return (
     <section className={styles['itemlist-section']}>
       <Search onChange={onChangeSearchText} searchTerm={searchTerm} onSubmit={onSubmitSearch} />
@@ -49,17 +49,25 @@ const ItemListSection = () => {
         <p className={styles['text-result']}>Menampilkan 300 hasil</p>
         <LayoutSwitch onChangeLayout={onChangeLayout} renderedLayout={itemsLayout} />
       </div>
-      <div className={`${styles['itemlist-container']} ${itemsLayout === PRODUCT_ITEMS_LAYOUT_GRID ? styles['grid-view'] : styles['list-view']}`}>
-        {(!isLoading || data.length !== 0 ? data : DUMMY_LOADING_ARRAY).map((item) => {
-          if (isLoading) return (
-            <div className={styles['itemlist-loader']}>
-              <LoadingPlaceholder containerClassName={styles['loader']} style={{ height: '100%' }} />
-            </div>
-          )
+      <div
+        className={`${styles['itemlist-container']} ${
+          itemsLayout === PRODUCT_ITEMS_LAYOUT_GRID ? styles['grid-view'] : styles['list-view']
+        }`}
+      >
+        {(!isLoading || data.length !== 0 ? data : DUMMY_LOADING_ARRAY).map(item => {
+          if (isLoading)
+            return (
+              <div className={styles['itemlist-loader']}>
+                <LoadingPlaceholder
+                  containerClassName={styles['loader']}
+                  style={{ height: '100%' }}
+                />
+              </div>
+            );
           return <GridProductItem />;
         })}
       </div>
-      
+
       <FloatingButton className={styles['floating-add-button']} onClick={redirectToInputPage}>
         <IconAdd />
       </FloatingButton>
