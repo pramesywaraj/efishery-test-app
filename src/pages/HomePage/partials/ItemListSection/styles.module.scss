@@ -54,6 +54,17 @@
   }
 }
 
+.itemlist-loader {
+  display: flex;
+  line-height: 1;
+  min-height: 140px;
+
+  .loader {
+    display: block;
+    flex: 1;
+  }
+}
+
 @include var.response-to-size(tablet-potrait) {
   .itemlist-container {
     &.grid-view {
